@@ -1,36 +1,3 @@
-// const cardInfoList = document.querySelectorAll('.card-info');
-
-// cardInfoList.forEach(cardInfo => {
-//   const cardTitle = cardInfo.querySelector('.card-title');
-//   const cardText = cardInfo.querySelector('.card-text');
-//   const cardDetails = cardInfo.querySelector('.card-block__details')
-//   const cardHover = cardInfo.querySelector('.card-block__hover');
-
-//   cardInfo.addEventListener('mouseenter', function() {
-//     cardTitle.style.display = 'none';
-//     cardDetails.style.display = 'none';
-//     cardText.style.display = 'none';
-//     cardHover.style.display = 'flex';
-//   });
-
-//   cardInfo.addEventListener('mouseleave', function() {
-//     cardTitle.style.display = 'block';
-//     cardText.style.display = 'block';
-//     cardHover.style.display = 'none';
-//     cardDetails.style.display = 'flex';
-//   });
-// });
-
-// cardInfoList.forEach(cardInfo => {
-//   cardInfo.addEventListener('mouseenter', function() {
-//     cardInfo.classList.add('hover-info');
-//   });
-
-//   cardInfo.addEventListener('mouseleave', function() {
-//     cardInfo.classList.remove('hover-info');
-//   });
-// });
-
 const Hammer = require('hammerjs');
 const sliderContainers = document.querySelectorAll('.slider-custom');
 
@@ -43,6 +10,7 @@ sliderContainers.forEach(sliderContainer => {
   const slideWidth = slider.querySelector('.slide').offsetWidth + 26;
   const slidesToShow = 4;
   let currentSlide = 0;
+  let currentOffset = 0; // Доданий рядок
 
   const nextButton = sliderContainer.querySelector('.next-button');
   const sliderChildrenLength = slider.children.length;
@@ -51,7 +19,8 @@ sliderContainers.forEach(sliderContainer => {
     nextButton.addEventListener('click', function () {
       if (currentSlide < sliderChildrenLength - slidesToShow) {
         currentSlide++;
-        slider.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        currentOffset = -currentSlide * slideWidth; // Доданий рядок
+        slider.style.transform = `translateX(${currentOffset}px)`;
         updateNextButton(nextButton, currentSlide, slidesToShow, sliderChildrenLength);
       }
     });
@@ -59,35 +28,46 @@ sliderContainers.forEach(sliderContainer => {
 
   const hammertime = new Hammer(sliderContainer);
 
-  let startOffset = 0;
-  let currentOffset = 0;
-
-  hammertime.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL, threshold: 10 });
+  hammertime.get('pan').set({ direction: Hammer.DIRECTION_HORIZONTAL, threshold: 20 });
 
   hammertime.on('panstart', function (e) {
-    startOffset = currentOffset;
+    currentOffset = -currentSlide * slideWidth; // Замінено currentOffset на currentSlide * slideWidth
   });
 
+  if ('ontouchstart' in window) {
+    hammertime.get('swipe').set({ direction: Hammer.DIRECTION_HORIZONTAL, threshold: 100 }); // Додано обробник swipe для тач-жестів
+    hammertime.on('swipeleft', function () {
+      if (currentSlide < sliderChildrenLength - slidesToShow) {
+        currentSlide++;
+        currentOffset = -currentSlide * slideWidth;
+        slider.style.transform = `translateX(${currentOffset}px)`;
+        updateNextButton(nextButton, currentSlide, slidesToShow, sliderChildrenLength);
+      }
+    });
+  
+    hammertime.on('swiperight', function () {
+      if (currentSlide > 0) {
+        currentSlide--;
+        currentOffset = -currentSlide * slideWidth;
+        slider.style.transform = `translateX(${currentOffset}px)`;
+        updateNextButton(nextButton, currentSlide, slidesToShow, sliderChildrenLength);
+      }
+    });
+  }
+  
+
   hammertime.on('pan', function (e) {
-    currentOffset = startOffset + (e.deltaX * 0.4);
+    const deltaX = e.deltaX;
+    const newOffset = currentOffset + deltaX * 0.5; // Замінено -currentSlide на currentOffset
     const maxOffset = (sliderChildrenLength - slidesToShow) * slideWidth * -1;
-    currentSlide = Math.min(0, Math.max(currentOffset / slideWidth * -1, maxOffset));
+    currentOffset = Math.max(maxOffset, Math.min(0, newOffset));
     slider.style.transform = `translateX(${currentOffset}px)`;
-    updateNextButton(nextButton, currentSlide, slidesToShow, sliderChildrenLength);
   });
 
   hammertime.on('panend', function (e) {
-    currentOffset = startOffset + (e.deltaX * 0.4); // Adjust the speed here (0.5 is the factor)
-    currentSlide = Math.round(currentOffset / slideWidth * -1);
-    slider.style.transform = `translateX(${-currentSlide * slideWidth}px)`;
-    updateNextButton(nextButton, currentSlide, slidesToShow, sliderChildrenLength);
+    const deltaX = e.deltaX;
+    currentSlide = Math.round(-currentOffset / slideWidth); // Замінено -Math.floor на Math.round
+    currentOffset = -currentSlide * slideWidth;
+    slider.style.transform = `translateX(${currentOffset}px)`;
   });
 });
-
-
-
-
-
-
-
-

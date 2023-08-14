@@ -21,6 +21,8 @@
         @include generalSetBtn();
         background-color: $blue-light;
         border: none;
+        position: relative;
+        z-index: 2;
         
     }
     &-blue:hover {
