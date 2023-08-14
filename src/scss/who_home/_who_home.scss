@@ -1,0 +1,56 @@
+.who {
+    background-image: url(../assets/img/who_bg.svg);
+    background-size: cover;
+    padding-top: 96px;
+    padding-bottom: 129px;
+    &-social {
+        display: inline-flex;
+        margin: 0 auto;
+        padding: 0;
+        flex-direction: initial;
+    }
+    &-title { 
+        @include title48;
+    }
+    &-text {
+        @include text-18px-400-27ln;
+        max-width: 824px;
+        text-align: center;
+    }
+    &-body {
+        @include center;
+        flex-direction: column;
+    }
+    &-social--block {
+        display: inline-flex;
+        gap: 24px;
+    }
+}
+
+@media screen and (max-width: 880px){
+    .who {
+        background-image: url("../assets/img/faq_elements_bg.svg");
+        background-color: rgba(229, 237, 247, 0.70);
+        padding-top: 64px;
+        padding-bottom: 156px;
+        background-repeat: no-repeat;
+        background-position: calc(100% - 9px) 13px; /* Змінено цей рядок */
+        background-size: unset;
+    }
+    .who-body {
+        text-align: start;
+        align-items: normal;
+    }
+    .who-title {
+        font-size: $font-32;
+        text-align: left;
+    }
+    .who-text {
+        font-size: $font-16;
+        line-height: 24px;
+        text-align: start;
+    }
+    .who-social--block {
+        display: none;
+    }
+}

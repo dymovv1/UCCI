@@ -1,0 +1,99 @@
+.courses {
+  &-main {
+    padding-top: 136px;
+    padding-bottom: 200px;
+  }
+  &-intro {
+    display: flex;
+    justify-content: space-between;
+  }
+  &-social {
+    position: relative;
+    top: 61px;
+  }
+  &-card__img {
+    margin-bottom: 24px;
+    display: inline-block;
+  }
+  &-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+  &-intro__title {
+    @include titleBlackMarker52px;
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+  &-intro__text {
+    @include text-18px-400-27ln;
+    max-width: 612px;
+  }
+  &-card {
+    display: inline-flex;
+    flex-direction: column;
+    @include shadow-border-radius24px;
+    padding: 36px 23px;
+  }
+  &-card__name {
+    @include text-18px-400-27ln;
+    font-weight: 600;
+    line-height: normal;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s;
+  }
+  &-card__name:hover {
+    gap: 12px;
+  }
+}
+
+.tabs {
+  margin-bottom: 48px;
+  display: flex;
+  &-btn {
+    @include text-24px-600-normalLN;
+    color: black;
+    font-size: 26px;
+    padding: 16px 36px;
+    border-bottom: 2px solid $gray-dark;
+    transition: all 0.5s;
+    cursor: pointer;
+  }
+  &-btn.is-active {
+    background: rgba(55, 126, 249, 0.10);
+    border-radius: 16px 16px 0px 0px;
+    border-bottom: 2px solid $blue-light;
+  }
+  &-line {
+    border-bottom: 2px solid $gray-dark;
+    width: 100%;
+  }
+  &-section {
+    margin-top: -112px;
+  }
+}
+.hidden {
+  display: none;
+}
+@media screen and (max-width: 1265px){
+  .courses-cards {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 1500px){
+  .courses-social {
+    display: none;
+  }
+  .tabs-section {
+    margin-top: 0;
+    padding-top: 48px;
+  }
+  .courses-main {
+    padding-top: 48px;
+  }
+  .tabs {
+    overflow: auto;
+  }
+}

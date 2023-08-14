@@ -1,0 +1,222 @@
+.about {
+  &-aside{
+    display: inline-flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &-info__teacher {
+    padding-top: 56px;
+    display: flex;
+    gap: 24px;
+  }
+  &-info__img {
+    width: 406px;
+  }
+  &-teacher__info {
+    padding-top: 64px;
+  }
+  &-info__study {
+    background-image: url("../assets/img/smm_study_bg.svg");
+    background-repeat: no-repeat;
+    background-position: right 64px;
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  &-study__card:nth-of-type(4) {
+    margin-bottom: 64px;
+  }
+  &-info {
+    max-width: 936px;
+  }
+  &-info__program {
+    padding-top: 64px;
+  }
+  &-info__title {
+    @include title-32-400-nornalLN;
+    margin-bottom: 24px;
+  }
+  &-info__text {
+    @include text-18px-400-27ln;
+    line-height: normal;
+    font-size: $font-16;
+  }
+  &-aside__btn {
+    @include text-18px-400-27ln;
+    line-height: normal;
+    text-transform: uppercase;
+  }
+  &-aside__btn.active {
+    font-weight: 600;
+    color: $blue-light;
+  }
+}
+.smm-about {
+  padding-top: 36px;
+  border-top: 2px solid $gray-dark;
+  max-width: 1248px;
+  margin: 0 auto;
+}
+.smm-about__body {
+  display: flex;
+  justify-content: space-between;
+}
+.info {
+  &-teacher__title {
+    @include text-18px-400-27ln;
+    font-weight: 600;
+  }
+  &-teacher__undertitle {
+    @include footerText14px;
+    line-height: normal;
+    font-weight: 400;
+    color: #B1B1B1;
+  }
+  &-teacher__text {
+    @include footerText14px;
+    font-weight: 400;
+    line-height: normal;
+    padding-top: 36px;
+    max-width: 506px;
+  }
+  &-program__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+}
+.program {
+  &-card {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+  }
+  &-card__title {
+    @include text-18px-400-27ln;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 12px;
+  }
+  &-card__text {
+    @include footerText14px;
+    color: black;
+    line-height: normal;
+    font-weight: 400;
+  }
+  &-title {
+    margin-bottom: 32px;
+  }
+}
+.study {
+  &-card__title {
+    line-height: 27px;
+    margin-bottom: 8px;
+    display: inline-flex;
+  }
+  &-card__title::before {
+    content: url("../assets/img/check.svg");
+    display: inline-block;
+    margin-right: 12px;
+  }
+  &-card__text {
+    line-height: 21px;
+    max-width: 612px;
+    margin-left: 38px;
+  }
+}
+
+.about-accordion-btn.hidden {
+  display: none;
+}
+@media screen and (max-width: 950px){
+  .smm-about {
+    border-top: none;
+    padding-top: 0;
+  }
+  .smm-section__intro {
+    padding-bottom: 40px;
+  }
+  .smm-intro__schedule {
+    margin-right: 0;
+  }
+  .about-accordion-btn.hidden {
+    display: flex;
+  }
+  .about-info {
+    width: 100%;
+  }
+  .about-info__title {
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .about-info__title::after {
+    content: url("../assets/img/check_black.svg");
+  }
+  .about-info__title.checked::after {
+    content: url("../assets/img/checked_black.svg");
+  }
+  .about-info__title.mobile {
+    display: none;
+  }
+  .about-info__text , .info-teacher__text , .program-card__text , .study-card__text {
+    font-size: $font-14;
+  }
+  .about-teacher__info, .about-info__text , .info-program__cards, .about-study__cards, .about-info__img  {
+    display: none;
+  }
+  .about-info__teacher, .about-info__program , .about-info__study, .about-teacher__info {
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: none;
+  }
+  .active-mobile {
+    display: none;
+    transition: display 0.5s ease;
+  }
+  .info-program__cards {
+    gap: 0;
+  }
+  .about-info__teacher, .about-info__study {
+    flex-direction: column;
+    gap: 0;
+  }
+  .mobile-line {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #D9D9D9;
+    margin-bottom: 24px;
+    margin-top: 24px;
+  }
+  .program-card__mb24{
+    margin-bottom: 24px;
+  }
+  .program-card {
+   gap: 16px;
+  }
+  .pt-40.mobile {
+    padding-top: 40px;
+  }
+  .program-card__img {
+    width: 24px;
+    height: 24px;
+  }
+  .mobile-line.teacher {
+    margin-top: 0;
+  }
+  .info-teacher__text, .about-study__cards , .program-title, .about-info__img {
+    margin-bottom: 24px;
+  }
+}
+@media  screen and (max-width: 1170px){
+  .about-aside {
+    display: none;
+  }
+  .about-info {
+    margin: 0 auto;
+  }
+
+}

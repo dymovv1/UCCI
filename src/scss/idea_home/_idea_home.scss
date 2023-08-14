@@ -1,0 +1,132 @@
+.idea {
+    padding-top: 136px;
+    padding-bottom: 80px;
+    &-title {
+        @include title48;
+        max-width: 824px;
+        text-align: start;
+    }
+    &-text {
+        @include text-18px-400-27ln;
+        max-width: 812px;
+    }
+    &-text__list {
+        @include text-18px-400-27ln;
+        color: $orange-light;
+        text-decoration: underline;
+    }
+    &-block__text {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+    &-card {
+        width: 292px;
+        @include sliderCard();
+        margin-bottom: 10px;
+        height: 417px;
+    }
+    &-card__img {
+        border-top-left-radius: 24px;
+        border-top-right-radius: 24px;
+        cursor: default;
+        width: 100%;
+        max-height: 292px;
+    }
+}
+
+.card {
+    &-info {
+        @include sliderInfo
+    }
+    &-title {
+        @include text-18px-400-27ln;
+        font-weight: 600;
+    }
+    &-text {
+        @include sliderCarText;
+    }
+    &-data , &-details {
+        @include grayDataCard;
+    }
+    &-details {
+        text-decoration: underline;
+    }
+    &-block__details {
+    @include sliderCardDetailsBlock;
+    }
+    &-block__hover { 
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        position: relative;
+        z-index: 2;
+        display: none;
+        transition: all 0.25s;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+}
+
+.block {
+    &-hover__link {
+        font-family: 'Montserrat' , sans-serif;
+        font-weight: 400;
+        font-size: $font-14;
+        text-decoration: underline;
+        color: $blue-light;
+        white-space: nowrap;
+        display: flex;
+        gap: 2px;
+        transition: all 0.25s;
+    }
+}
+
+.arrow-blue {
+    width: 10px;
+    margin-top: 2px;
+}
+.idea-card:hover .card-info::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90%;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.00) 0%, #FFF 73.23%);
+    border-radius: 24px;
+    opacity: 0;
+    transition: all 0.25s;
+}
+
+
+.idea-card:hover .card-block__details {
+    display: none;
+}
+.idea-card:hover .card-title {
+    display: none;
+}
+.idea-card:hover .card-text {
+    display: none;
+}
+.idea-card:hover .card-block__hover {
+    display: flex;
+}
+
+@media screen and (max-width: 880px){
+    .idea-title {
+        font-size: $font-32;
+    }
+    .idea-text {
+        font-size: $font-16;
+        line-height: 24px;
+    }
+    .idea-block__text {
+        display: inline-flex;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 24px;
+    }
+
+}

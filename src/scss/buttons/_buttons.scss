@@ -1,0 +1,72 @@
+
+@mixin generalSetBtn {
+    display: inline-flex;
+    padding: 14px 24px;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.25s;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    gap: 8px;
+    color: $white;
+    transition: all 0.25s;
+    line-height: normal;
+    font-weight: 600;
+    border-radius: 25px;
+}
+
+.btn {
+    &-blue {
+        @include generalSetBtn();
+        background-color: $blue-light;
+        border: none;
+        
+    }
+    &-blue:hover {
+        background-color: $blue-dark;
+    }
+    &-opacity {
+        @include generalSetBtn();
+        border: 1px solid $blue-light;
+        background-color: $white;
+        color: $blue-light;
+        box-sizing: border-box;
+    }
+    &-opacity:hover {
+        background: $blue-gray;
+    }
+    &-fullorange {
+        @include generalSetBtn();
+        background-color: $orange-light;
+        border: none;
+    }
+    &-fullorange:hover {
+        background-color: $orange-dark;
+    }
+    &-orangeOpacity {
+        @include generalSetBtn();
+        color: $orange-light;
+        background: $white;
+        border: 1px solid $orange-light;
+    }
+    &-orangeOpacity:hover {
+        border: 1px solid $orange-dark;
+        background-color: $yellow-opacity;
+    }
+    &-lang {
+        border: none;
+        background: none;
+        text-transform: uppercase;
+        color: $text-gray-dark;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 1rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.25s;
+    }
+    &-lang.active {
+        border-bottom: 1px solid $orange-light;
+        font-weight: 600;
+    }
+}

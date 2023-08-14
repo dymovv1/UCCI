@@ -1,0 +1,272 @@
+$orange-light : #E9B11C;
+$orange-dark :#DEA60F;
+$blue-light :#377EF9 ;
+$blue-dark :#2663CD ;
+$yellow-opacity: #FEF6CC;
+$blue-gray:#EBF2FE;
+$gray-dark:#E6E6E6;
+$gray-light: #F0F0F0;
+$text-dark:#000000;
+$text-gray-dark:#282828;
+$text-gray-medium:#696969;
+$text-gray-mediumLow:#818181;
+$text-gray-light:#696969;
+$white:#FFFFFF;
+
+/*<--colors-->*/
+
+$font-48: 3rem;
+$font-52: 3.25rem;
+$font-18: 1.125rem;
+$font-22: 1.375rem;
+$font-16: 1rem;
+$font-24: 1.5rem;
+$font-14: 0.875rem;
+$font-44: 2.75rem;
+$font-12: 0.75rem;
+$font-38: 2.375rem;
+$font-32: 2rem;
+
+/*<--font-size-->*/
+
+
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:  0 auto;
+    text-align: center;
+    flex-direction: column;
+}
+@mixin sliderCardDetailsBlock {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin sliderText {
+    color: $text-gray-medium;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: $font-12;
+    font-weight: 400;
+    width: 270px;
+}
+@mixin sliderBtn {
+    display: flex;
+    justify-content: flex-end;
+    z-index: 2;
+    top: -238px;
+    position: relative;
+    margin-right: -24px;
+    cursor: pointer;
+}
+
+@mixin sliderCardTitle {
+    @include text-18px-400-27ln;
+    font-weight: 600;
+}
+@mixin sliderCarText {
+    color: $text-gray-medium;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: $font-12;
+    font-weight: 400;
+    width: 270px;
+}
+@mixin footerText14px {
+    color: $text-gray-dark;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: $font-14;
+    line-height: 21px;
+}
+@mixin text-18px-400-27ln {
+    color: $text-gray-dark;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: $font-18;
+    font-weight: 400;
+    line-height: 27px;
+}
+@mixin shadow-border-radius24px {
+    border-radius: 24px;
+    border: 1px solid $gray-dark;
+    background: $white;
+    box-shadow: 0 4px 4px 0 $gray-dark;
+}
+
+@mixin sliderCard {
+    border-radius: 24px;
+    border: 1px solid $gray-dark;
+    box-shadow: 0 4px 4px 0 $gray-dark;
+    cursor: default;
+    transition: all 0.25s;
+    display: inline-block;
+}
+@mixin sliderInfo {
+    padding: 16px 12px 20px 12px;
+}
+@mixin text-24px-600-normalLN {
+    color: $text-gray-dark;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-24;
+    font-weight: 600;
+}
+@mixin title48 {
+    color: $text-gray-dark;
+    text-align: center;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: $font-48;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+@mixin headerFooterContainer {
+    max-width: 1480px;
+    padding: 0 10px;
+    margin: 0 auto;
+}
+@mixin titleBlackMarker52px {
+    color: $text-gray-dark;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: $font-52;
+    line-height: 62px;
+    text-transform: uppercase;
+}
+@mixin grayDataCard {
+    color: #B1B1B1;
+    font-family: 'Montserrat' ,sans-serif;
+    font-size: $font-12;
+    font-weight: 400;
+    }
+@mixin modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(40, 40, 40, 0.50);
+    z-index: 9999;
+}
+@mixin title-32-400-nornalLN {
+    color: $text-gray-dark;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-32;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+/*<--mixins-->*/
+.mb-24 {
+    margin-bottom: 24px;
+}
+.mb-10 {
+    margin-bottom: 10px;
+}
+.mb-42 {
+    margin-bottom: 42px;
+}
+.mb-32 {
+    margin-bottom: 32px;
+}
+.mb-48 {
+    margin-bottom: 48px;
+}
+.mb-12 {
+    margin-bottom: 12px;
+}
+.mb-52 {
+    margin-bottom: 52px;
+}
+.mb-8 {
+    margin-bottom: 8px;
+}
+.mb-0 {
+    margin-bottom: 0;
+}
+.mb-59 {
+    margin-bottom: 59px;
+}
+.mb-18 {
+    margin-bottom: 18px;
+}
+.mb-16 {
+    margin-bottom: 16px;
+}
+.width-100 {
+    width: 100%;
+}
+.pb-111 {
+    padding-bottom: 111px;
+}
+.mt-0 {
+    margin-top: 0;
+}
+
+.title-marker-52-600 {
+    @include titleBlackMarker52px;
+    font-weight: 600;
+}
+.flex {
+    display: flex;
+}
+.block {
+    display: block;
+}
+.center {
+@include center;
+}
+.al-it-cn {
+    align-items: center;
+}
+.js-sp {
+    justify-content: space-between;
+}
+
+input {
+    background-color: #F0F0F0;
+    padding: 16px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: $text-dark;
+    font-size: $font-16;
+    font-weight: 500;
+    font-family: 'Montserrat' , sans-serif;
+    max-height: 48px;
+    max-width: 458px;
+}
+
+::placeholder {
+    font-family: 'Montserrat' , sans-serif;
+    font-weight: 500;
+    font-size: $font-16;
+    line-height: 16px;
+    color: $text-gray-mediumLow;
+}
+
+button {
+    background: none;
+    border: none;
+}
+
+label {
+    color: $text-gray-dark;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: $font-14;
+    font-weight: 300;
+    margin-bottom: 8px;
+}
+
+.input-error {
+    border: 1px solid $orange-light;
+    margin-bottom: 4px;
+    &__text {
+        color: $orange-light;
+        font-family: 'Montserrat', sans-serif;
+        font-size: $font-14;
+        font-weight: 400;
+        display: none;
+    }
+}

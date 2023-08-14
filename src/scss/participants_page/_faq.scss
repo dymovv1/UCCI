@@ -1,0 +1,98 @@
+.faq {
+  padding-top: 138px;
+  padding-bottom: 200px;
+  background-image: url("../assets/img/faq_bg.svg");
+  background-repeat: no-repeat;
+  background-position: 25px 24px;
+  background-color: #E5EDF7;
+  &-title {
+    @include titleBlackMarker52px;
+    font-weight: 600;
+    text-align: center;
+  }
+  &-text {
+    @include text-18px-400-27ln;
+    max-width: 824px;
+    text-align: center;
+  }
+  &-accordion__card {
+    padding: 24px 27px 24px 24px;
+    background: $white;
+    @include shadow-border-radius24px;
+    border-radius: 16px;
+    width: 1036px;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+  &-accordion {
+    display: flex;
+    justify-content: center;
+    margin-top: -255px;
+    padding-bottom: 200px;
+  }
+}
+
+.accordion {
+  &-card__info {
+    @include footerText14px;
+    display: none;
+    margin-top: 24px;
+    max-width: 800px;
+  }
+  &-card__title {
+    @include text-24px-600-normalLN;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &-card__title::after {
+    content: url("../assets/img/plus_blue.svg");
+    width: 24px;
+    height: 24px;
+  }
+}
+.accordion-card__title.expanded::after {
+  content: url("../assets/img/close_orange.svg");
+  width: 24px;
+  height: 24px;
+}
+
+@media screen and (max-width: 1100px){
+  .faq-accordion__card {
+    max-width: 700px;
+  }
+}
+@media screen and (max-width: 776px) {
+  .faq-accordion__card, .participants-card {
+    max-width: 358px;
+  }
+  .faq-accordion__card {
+    padding: 16px;
+  }
+  .accordion-card__title {
+    font-size: 16px;
+  }
+  .faq {
+    padding-top: 64px;
+    background-image: url("../assets/img/faq_elements_bg.svg");
+    background-color: #E5EDF7;
+    background-position: right;
+    background-position-y: 13px;
+    padding-bottom: 156px;
+  }
+  .faq-title {
+    font-size: 32px;
+  }
+  .pb-111 {
+    padding-bottom: 0;
+  }
+  .faq-accordion {
+    margin-top: -135px;
+    padding-bottom: 108px;
+  }
+  .faq-text {
+    max-width: 358px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

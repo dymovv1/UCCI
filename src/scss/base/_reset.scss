@@ -1,0 +1,29 @@
+*,*::after,*::before{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+body,html {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #FFFFFF;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+}
+
+img {
+    vertical-align: top;
+	max-width: 100%;
+}
+
+span,p,h1,h2,h3,h4,h5,a,button {
+    font-family: 'Montserrat', sans-serif;
+}

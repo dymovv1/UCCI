@@ -1,0 +1,95 @@
+.team {
+    margin-top: -65px;
+    &-photos {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 64px;
+    }
+    &-photos__img {
+        border-radius: 17px;
+    }
+    &-title {
+        font-weight: 400;
+        line-height: 150%;
+        font-size: $font-22;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
+        margin-bottom: 21.5px;
+    }
+    &-cards__item {
+        min-width: 612px;
+        padding: 24px;
+        border-radius: 24px;
+        border: 1px solid $gray-dark;
+        box-shadow: 0px 4px 4px 0px $gray-dark;
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+    }
+    &-cards {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+    }
+}
+
+.cards {
+    &-item__title {
+        font-size: $font-16;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+        color: $text-gray-dark;
+        line-height: 24px;
+        display: inline-flex;
+    }
+    &-item__title::before {
+        content: url(../assets/img/check.svg);
+        margin-right: 12px;
+    }
+    &-item__text {
+        @include text-18px-400-27ln;
+        font-size: $font-14;
+        max-width: 506px;
+    }
+}
+
+@media screen and (max-width: 1270px){
+    .team-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media screen and (max-width: 880px){
+    .team-photos {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+    .team-photos__img {
+        max-width: 358px;
+        min-height: 228px;
+    }
+    .team {
+        margin-top: -88px;
+    }
+    .team-title {
+        font-size: $font-18;
+        line-height: 27px;
+        text-align: center;
+        margin-bottom: 32px;
+    }
+    .team-cards {
+        align-items: center;
+        flex-direction: column;
+    }
+    .cards-item__text {
+        line-height: 21px;
+    }
+    .team-cards__item {
+        padding: 16px;
+        min-width: 358px;
+    }
+
+}

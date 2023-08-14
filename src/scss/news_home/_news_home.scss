@@ -1,0 +1,132 @@
+.news {
+  padding-bottom: 135px;
+  &-title {
+    @include title48();
+    text-align: start;
+  }
+  &-title__mobile {
+    display: none;
+  }
+  &-block__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &-card {
+    @include sliderCard;
+    width: 292px;
+    max-height: 526px;
+    margin-bottom: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    position: static;
+    overflow: visible;
+    transition: all 0.25s;
+    padding: 0 24px 36px 24px;
+    min-width: 395px;
+  }
+  &-card__hover {
+    @include sliderCard;
+    transition: all 0.25s;
+  }
+
+&-card__info {
+@include sliderInfo;
+max-width: 335px;
+}
+
+&-card__title {
+  color: $text-gray-dark;
+  font-family: 'Montserrat' , sans-serif;
+  font-size: $font-24;
+  font-weight: 600;
+  text-align: start;
+  margin-bottom: 10px;
+}
+&-card__text {
+@include sliderText;
+text-align: start;
+}
+&-card__agenda {
+  color: $text-gray-dark;
+  font-family: 'Montserrat', sans-serif;
+  font-size: $font-18;
+  font-weight: 500;
+  line-height: 27px;
+  text-align: start;
+  margin-bottom: 16px;
+  padding-top: 36px;
+  }
+&-line {
+  display: block;
+  width: 335px;
+  background-color: #D9D9D9;
+  height: 1px;
+  margin-bottom: 17px;
+  margin-top: 16px;
+}
+&-card__details {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  min-width: 335px;
+}
+&-card__listSocial {
+  display: flex;
+  width: 335px;
+  justify-content: space-between;
+}
+}
+
+.card {
+  &-focus {
+  width: 395px;
+  text-align: center;
+    min-height: 417px !important;
+
+  }
+  &-info__news {
+  @include sliderInfo;
+}
+
+&-text__news {
+@include sliderCarText;
+}
+}
+.card-listSocial__links {
+  display: flex;
+  gap: 16px;
+}
+.card-listSocial__text {
+  color: $text-gray-dark;
+  font-family: 'Montserrat' , sans-serif;
+  font-size: $font-16;
+  font-weight: 400;
+  }
+.news-text__mobile {
+  display: none;
+}
+
+@media screen and (max-width: 776px){
+  .news-title {
+    display: none;
+  }
+  .news-title__mobile {
+    @include title-32-400-nornalLN;
+    display: block;
+    margin-bottom: 24px;
+  }
+  .news-text__mobile {
+    display: block;
+    @include footerText14px;
+    font-size: $font-16;
+    line-height: 24px;
+    margin-bottom: 32px;
+  }
+  .news-block__title {
+    flex-direction: column;
+  }
+  .news-card {
+    display: none;
+  }
+}

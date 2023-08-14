@@ -1,0 +1,109 @@
+.modal {
+@include modal;
+
+    &-reg {
+        display: inline-flex;
+        background-color: $white;
+        padding: 40px 24px;
+        border-radius: 24px;
+    }
+    &-block__checkbox {
+        display: inline-flex;
+        gap: 8px;
+        align-items: flex-start;
+    }
+    &-checkbox__text {
+    color: $text-gray-dark;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: $font-12;
+    font-weight: 300;
+    max-width: 427px;
+    }
+    &-block__close {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &-btn__close {
+        cursor: pointer;
+    }
+    &-textare__body {
+        display: inline-block;
+    }
+    &-textarea__label {
+        display: block;
+    }
+    &-textarea {
+        display: inline-block;
+        padding: 40px 24px;
+        background: $white;
+        border-radius: 24px;
+        box-shadow: 0px 4px 4px 0px #E6E6E6;
+        background: #FFF;
+        border: 1px solid #E6E6E6;
+    }
+    &-btn__textarea {
+        display: flex;
+        width: 100%
+    }
+    &-textarea__hidden {
+        @include modal;
+    }
+}
+
+#modal-textarea {
+    @include center;
+    width: 458px;
+    height: 126px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    text-align: start;
+    resize: none;
+    background: $gray-light;
+    padding: 16px 18px 16px 16px;
+    caret-color: $orange-light;
+    font-family: 'Montserrat' , sans-serif;
+    font-size: $font-16;
+    font-weight: 400;
+    line-height: 26px; 
+}
+#modal-textarea::placeholder {
+    color: #818181;
+}
+
+.custom-checkbox {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    border: 2px solid #F0F0F0;
+    background: #FFF;
+    display: inline-block;
+    position: relative;
+  }
+  
+  .hidden-checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 24px;
+    height: 24px;
+    background-image: url(../assets/img/check.svg);
+    background-size: cover; 
+    display: none;
+  }
+  
+  .hidden-checkbox:checked + .checkmark {
+    display: block;
+  }
+  
