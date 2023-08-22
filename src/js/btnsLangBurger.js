@@ -25,7 +25,11 @@ setActiveLangButton();
 
 
 const burgerMenu = document.querySelector('.burger-menu');
+const headerNav = document.querySelector('.header-nav__mobile');
+const headerMobile = document.querySelector('.header-mobile');
 
 burgerMenu.addEventListener('click', () => {
     burgerMenu.classList.toggle('is-active');
+    headerNav.classList.toggle('is-active');
+    headerMobile.classList.toggle('is-active');
 });

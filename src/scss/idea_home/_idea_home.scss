@@ -25,11 +25,11 @@
         @include sliderCard();
         margin-bottom: 10px;
         height: 417px;
+        cursor: pointer;
     }
     &-card__img {
         border-top-left-radius: 24px;
         border-top-right-radius: 24px;
-        cursor: default;
         width: 100%;
         max-height: 292px;
     }

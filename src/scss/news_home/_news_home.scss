@@ -57,13 +57,16 @@ text-align: start;
   margin-bottom: 16px;
   padding-top: 36px;
   }
-&-line {
+&-line , &-line_mobile {
   display: block;
   width: 335px;
   background-color: #D9D9D9;
   height: 1px;
   margin-bottom: 17px;
   margin-top: 16px;
+}
+&-line_mobile {
+  display: none;
 }
 &-card__details {
   display: flex;
@@ -76,23 +79,12 @@ text-align: start;
   width: 335px;
   justify-content: space-between;
 }
+  &-card__socilaMobile {
+    display: none;
+}
 }
 
-.card {
-  &-focus {
-  width: 395px;
-  text-align: center;
-    min-height: 417px !important;
 
-  }
-  &-info__news {
-  @include sliderInfo;
-}
-
-&-text__news {
-@include sliderCarText;
-}
-}
 .card-listSocial__links {
   display: flex;
   gap: 16px;
@@ -128,5 +120,19 @@ text-align: start;
   }
   .news-card {
     display: none;
+  }
+  .news-line_mobile {
+    width: 100%;
+    display: block;
+    margin: 0;
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  .news-card__socilaMobile {
+    display: flex;
+    justify-content: space-between;
+  }
+  .news {
+    padding-bottom: 112px;
   }
 }

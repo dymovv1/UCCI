@@ -235,6 +235,22 @@ const customeSliderNews = `
                             <button class="next-button" id="button-slider-news">
                             </button>
                         </div>
-                </div>`
+                </div>
+                
+                <div>
+                <div class="news-line_mobile"></div>
+
+                <div class="news-card__socilaMobile">
+                    <p class="card-listSocial__text">Також ми в мережі</p>
+
+                    <div class="card-listSocial__links">
+                        <a href="#"><img src="${imageOrangeFacebook}" alt="facebook"></a>
+                        <a href="#"> <img src="${imageOrangeTelegram}" alt="telegram"></a>
+                        <a href="#"><img src="${imageOrangeInstagram}" alt="instagram"></a>
+                    </div>
+                </div>
+                 </div>
+                
+                `
 
 export default customeSliderNews;

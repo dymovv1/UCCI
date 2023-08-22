@@ -1,6 +1,8 @@
 .slider-container {
   max-width: 1248px;
   overflow: hidden;
+  cursor: grab;
+
 }
 
 .slider {
@@ -8,6 +10,7 @@
   gap: 26px;
   transition: transform 0.3s ease;
   align-items: center;
+  touch-action: pan-y !important;
 }
 
 .slide {
